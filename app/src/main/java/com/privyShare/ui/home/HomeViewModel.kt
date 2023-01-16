@@ -61,6 +61,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                         message.postValue(String(it.readBytes(), Charsets.UTF_8))
                     }
                     snackBarMsg.postValue("File decrypted successfully!")
+
                 } catch (e: Exception) {
                     snackBarMsg.postValue(e.message)
                 }

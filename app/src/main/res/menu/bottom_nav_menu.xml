@@ -16,9 +16,9 @@
         android:icon="@drawable/ic_action_image"
         android:title="@string/image_encryption" />
 
-    <item
-        android:id="@+id/navigation_sharedPref"
-        android:icon="@drawable/ic_action_pref"
-        android:title="@string/pref_encryption" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_sharedPref"-->
+<!--        android:icon="@drawable/ic_action_pref"-->
+<!--        android:title="@string/pref_encryption" />-->
 
 </menu>

@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home,
                 R.id.navigation_image,
                 R.id.navigation_file,
-                R.id.navigation_sharedPref
+//                R.id.navigation_sharedPref
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

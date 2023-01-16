@@ -21,7 +21,7 @@ class FileListAdapter(
             itemView.apply {
                 txtFileName.text = file.fileName
                 txtFile.text = file.file.toString()
-                txtFileSize.text = file.fileSize
+//                txtFileSize.text = file.fileSize
                 setOnClickListener {
                     listener(adapterPosition)
                 }

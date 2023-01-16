@@ -1,5 +1,6 @@
 package com.privyShare.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -19,6 +20,7 @@ import com.privyShare.R
 import com.privyShare.data.FileEntity
 import com.privyShare.ui.home.adapter.FileListAdapter
 import com.privyShare.util.Utility
+import kotlinx.android.synthetic.main.detail_dialog.*
 import kotlinx.android.synthetic.main.detail_dialog.view.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.key_edit_dialog.*
@@ -63,6 +65,7 @@ class HomeFragment : Fragment() {
         observeViewModel()
         viewModel.getFileList()
         viewModel.getMasterToken()
+
     }
 
     private fun setupBiometric() {
@@ -128,6 +131,7 @@ class HomeFragment : Fragment() {
             viewModel.bmp.observe(viewLifecycleOwner, Observer {
                 view.dialog_imageView.setImageBitmap(it)
             })
+
             viewModel.getEncryptedBitmap()
         } else {
             view.dialog_textView.isVisible = true
@@ -135,8 +139,12 @@ class HomeFragment : Fragment() {
                 view.dialog_textView.text = it
             })
             viewModel.getEncryptedFile()
+
+
         }
+
         dialog.show()
+
 
     }
 

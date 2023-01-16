@@ -17,11 +17,11 @@
         android:label="@string/image_encryption"
         tools:layout="@layout/fragment_image" />
 
-    <fragment
-        android:id="@+id/navigation_sharedPref"
-        android:name="com.privyShare.ui.sharedpref.SharedPrefFragment"
-        android:label="@string/pref_encryption"
-        tools:layout="@layout/fragment_shared_pref" />
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_sharedPref"-->
+<!--        android:name="com.privyShare.ui.sharedpref.SharedPrefFragment"-->
+<!--        android:label="@string/pref_encryption"-->
+<!--        tools:layout="@layout/fragment_shared_pref" />-->
     <fragment
         android:id="@+id/navigation_file"
         android:name="com.privyShare.ui.file.FileFragment"
