@@ -44,6 +44,7 @@ class ImageFragment : Fragment() {
         fb_capture_image.setOnClickListener {
             if (requestPermission()) {
                 getImage()
+                textView.visibility = View.INVISIBLE
             } else {
                 ActivityCompat.requestPermissions(requireActivity(), permission, REQ_CODE)
             }

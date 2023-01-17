@@ -1,7 +1,9 @@
 package com.privyShare.ui.home
 
+import android.R.attr.data
 import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.*
 import androidx.biometric.BiometricManager
@@ -27,6 +29,7 @@ import kotlinx.android.synthetic.main.key_edit_dialog.*
 import kotlinx.android.synthetic.main.key_setup_dialog.*
 import java.io.File
 import java.util.*
+
 
 class HomeFragment : Fragment() {
 
@@ -65,6 +68,10 @@ class HomeFragment : Fragment() {
         observeViewModel()
         viewModel.getFileList()
         viewModel.getMasterToken()
+
+        fb_open_file.setOnClickListener {
+            selectImage()
+        }
 
     }
 
@@ -120,6 +127,37 @@ class HomeFragment : Fragment() {
         }
     }
 
+
+
+    private fun selectImage() {
+//        val choice = arrayOf<CharSequence>("Take Photo", "Choose from Gallery", "Cancel")
+//        val myAlertDialog: AlertDialog.Builder = AlertDialog.Builder(this)
+//        myAlertDialog.setTitle("Select Image")
+//        myAlertDialog.setItems(choice, DialogInterface.OnClickListener { dialog, item ->
+//            when {
+//                // Select "Choose from Gallery" to pick image from gallery
+//                choice[item] == "Choose from Gallery" -> {
+                    val pickFromGallery = Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                    pickFromGallery.type = "*/*"
+                    startActivityForResult(pickFromGallery, 1)
+
+//                }
+//                // Select "Take Photo" to take a photo
+//                choice[item] == "Take Photo" -> {
+//                    val cameraPicture = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//                    startActivityForResult(cameraPicture, 0)
+//                }
+//                // Select "Cancel" to cancel the task
+//                choice[item] == "Cancel" -> {
+//                    myAlertDialog.dismiss()
+//                }
+//            }
+//        })
+//        myAlertDialog.show()
+        val file = File(pickFromGallery.data!!.path)
+        showAlertDialog(file)
+    }
+
     private fun showAlertDialog(file: File) {
 
         val dialog = MaterialDialog(requireContext())
@@ -139,14 +177,12 @@ class HomeFragment : Fragment() {
                 view.dialog_textView.text = it
             })
             viewModel.getEncryptedFile()
-
-
         }
-
         dialog.show()
 
-
     }
+
+
 
     private fun dialogSetMasterKey() {
         MaterialDialog(requireContext()).show {

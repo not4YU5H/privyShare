@@ -30,6 +30,7 @@ class FileListAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FileListViewHolder {
+
         return FileListViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.secure_file_list_view, parent, false)
@@ -42,5 +43,6 @@ class FileListAdapter(
     override fun onBindViewHolder(holder: FileListViewHolder, position: Int) {
         val file = fileList[position]
         holder.onBind(file)
+        holder.setIsRecyclable(false)
     }
 }

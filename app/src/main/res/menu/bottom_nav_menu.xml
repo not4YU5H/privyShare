@@ -17,6 +17,11 @@
         android:title="@string/image_encryption" />
 
 <!--    <item-->
+<!--        android:id="@+id/navigation_shared"-->
+<!--        android:icon="@drawable/share"-->
+<!--        android:title="Shared Images"/>-->
+
+<!--    <item-->
 <!--        android:id="@+id/navigation_sharedPref"-->
 <!--        android:icon="@drawable/ic_action_pref"-->
 <!--        android:title="@string/pref_encryption" />-->

@@ -20,6 +20,7 @@ class ImageViewModel(application: Application) : AndroidViewModel(application) {
     private val dir = File(context.filesDir, "images")
     val bitmap: MutableLiveData<Bitmap> = MutableLiveData()
 
+
     fun saveEncryptedBitmap() {
         viewModelScope.launch {
             val scaledBitmap = Bitmap.createScaledBitmap(bitmap.value!!, 1080, 780, true)
