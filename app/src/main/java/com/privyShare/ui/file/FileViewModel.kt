@@ -47,7 +47,7 @@ class FileViewModel(application: Application) : AndroidViewModel(application) {
     fun storeEncryptedFile() {
         viewModelScope.launch {
             val date = Date()
-            val fileName = "Encrypted ${dateFormat.format(date)}.txt"
+            val fileName = "TextEnc (${dateFormat.format(date)}).txt"
             if (!dir.exists()) {
                 dir.mkdir()
             }

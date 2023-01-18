@@ -25,7 +25,7 @@ class ImageViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             val scaledBitmap = Bitmap.createScaledBitmap(bitmap.value!!, 1080, 780, true)
             val date = Date()
-            val fileName = "EncryptedImage ${dateFormat.format(date)}.jpg"
+            val fileName = "ImageEnc (${dateFormat.format(date)}).jpg"
             if (!dir.exists()) {
                 dir.mkdir()
             }

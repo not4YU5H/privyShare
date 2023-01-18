@@ -38,7 +38,7 @@
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/share"
+        android:src="@drawable/share_ee"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
